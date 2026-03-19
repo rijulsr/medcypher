@@ -12,6 +12,7 @@ import {chatSessionStore, SessionMetaData} from '../../store';
 import {Menu, RenameModal, Checkbox} from '..';
 import {
   BenchmarkIcon,
+  CameraIcon,
   ChatIcon,
   EditIcon,
   ModelIcon,
@@ -541,6 +542,19 @@ export const SidebarContent: React.FC<DrawerContentComponentProps> = observer(
               )}
               onPress={() => props.navigation.navigate(ROUTES.APP_INFO)}
               style={styles.menuDrawerItem}
+            />
+            <Drawer.Item
+              label="Medical OCR"
+              icon={() => (
+                <CameraIcon
+                  width={24}
+                  height={24}
+                  stroke={theme.colors.primary}
+                />
+              )}
+              onPress={() => props.navigation.navigate(ROUTES.MEDICAL_OCR)}
+              style={styles.menuDrawerItem}
+              testID="drawer-item-medical-ocr"
             />
             {/* Only show Dev Tools in debug mode */}
             {isDebugMode && (

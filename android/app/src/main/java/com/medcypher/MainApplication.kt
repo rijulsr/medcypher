@@ -1,4 +1,4 @@
-package com.pocketpal
+package com.medcypher
 
 import android.app.Application
 import com.facebook.react.PackageList
@@ -11,10 +11,10 @@ import com.facebook.react.defaults.DefaultReactHost.getDefaultReactHost
 import com.facebook.react.defaults.DefaultReactNativeHost
 import com.facebook.react.soloader.OpenSourceMergedSoMapping
 import com.facebook.soloader.SoLoader
-import com.pocketpal.KeepAwakePackage
-import com.pocketpal.HardwareInfoPackage
-import com.pocketpal.StorefrontPackage
-import com.pocketpal.download.DownloadPackage
+import com.medcypher.KeepAwakePackage
+import com.medcypher.HardwareInfoPackage
+import com.medcypher.StorefrontPackage
+import com.medcypher.download.DownloadPackage
 
 class MainApplication : Application(), ReactApplication {
 

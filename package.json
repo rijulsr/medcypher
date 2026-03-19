@@ -1,5 +1,5 @@
 {
-  "name": "PocketPal",
+  "name": "medcypher",
   "version": "1.12.2",
   "private": true,
   "scripts": {
@@ -131,7 +131,7 @@
     "type": "all",
     "jsSrcsDir": "src/specs",
     "android": {
-      "javaPackageName": "com.pocketpal.specs"
+      "javaPackageName": "com.medcypher.specs"
     }
   }
 }

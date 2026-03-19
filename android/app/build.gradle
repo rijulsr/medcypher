@@ -85,9 +85,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace "com.pocketpal"
+    namespace "com.medcypher"
     defaultConfig {
-        applicationId "com.pocketpalai"
+        applicationId "com.medcypher"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 132 
@@ -171,6 +171,17 @@ dependencies {
 
     // OkHttp for DownloadModule (network requests)
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
+}
+
+// Fix: Gradle auto-provisions JDK 17 whose java.io.tmpdir defaults to C:\WINDOWS.
+// Room's annotation processor uses sqlite-jdbc which tries to extract a DLL there.
+// Pass a writable tmpdir directly to the javac JVM that KAPT uses.
+def writableTmp = System.env.LOCALAPPDATA ? "${System.env.LOCALAPPDATA}\\Temp" : System.getProperty("java.io.tmpdir")
+kapt {
+    javacOptions {
+        option("-J-Djava.io.tmpdir=${writableTmp}")
+        option("-J-Dorg.sqlite.tmpdir=${writableTmp}")
+    }
 }
 
 project.ext.vectoricons = [

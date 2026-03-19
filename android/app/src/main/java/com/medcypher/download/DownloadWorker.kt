@@ -1,4 +1,4 @@
-package com.pocketpal.download
+package com.medcypher.download
 
 import android.content.Context
 import android.util.Log

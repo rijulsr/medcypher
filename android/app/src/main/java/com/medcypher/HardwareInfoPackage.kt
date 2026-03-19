@@ -1,16 +1,16 @@
-package com.pocketpal.download
+package com.medcypher
 
 import com.facebook.react.TurboReactPackage
 import com.facebook.react.bridge.NativeModule
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.module.model.ReactModuleInfo
 import com.facebook.react.module.model.ReactModuleInfoProvider
-import com.pocketpal.specs.NativeDownloadModuleSpec
+import com.medcypher.specs.NativeHardwareInfoSpec
 
-class DownloadPackage : TurboReactPackage() {
+class HardwareInfoPackage : TurboReactPackage() {
   override fun getModule(name: String, reactContext: ReactApplicationContext): NativeModule? {
-    return if (name == NativeDownloadModuleSpec.NAME) {
-      DownloadModule(reactContext)
+    return if (name == NativeHardwareInfoSpec.NAME) {
+      HardwareInfoModule(reactContext)
     } else {
       null
     }
@@ -19,12 +19,12 @@ class DownloadPackage : TurboReactPackage() {
   override fun getReactModuleInfoProvider(): ReactModuleInfoProvider {
     return ReactModuleInfoProvider {
       mapOf(
-        NativeDownloadModuleSpec.NAME to ReactModuleInfo(
-          NativeDownloadModuleSpec.NAME,
-          NativeDownloadModuleSpec.NAME,
+        NativeHardwareInfoSpec.NAME to ReactModuleInfo(
+          NativeHardwareInfoSpec.NAME,
+          NativeHardwareInfoSpec.NAME,
           false, // canOverrideExistingModule
           false, // needsEagerInit
-          false, // hasConstants
+          true,  // hasConstants
           false, // isCxxModule
           true   // isTurboModule
         )
@@ -32,3 +32,4 @@ class DownloadPackage : TurboReactPackage() {
     }
   }
 }
+

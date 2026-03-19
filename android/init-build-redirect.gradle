@@ -1,0 +1,8 @@
+// Init script: runs before all project build scripts
+// Redirects subproject build dirs outside OneDrive to prevent file-locking during sync
+// Root project is excluded to keep autolinking.json in its expected location
+allprojects {
+    if (project != rootProject) {
+        buildDir = "C:/Users/rijul/AppData/Local/Temp/MedCypherBuild/${project.name}"
+    }
+}

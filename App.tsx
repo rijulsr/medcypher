@@ -35,6 +35,7 @@ import {
   SettingsScreen,
   BenchmarkScreen,
   AboutScreen,
+  MedicalOCRNavigator,
 
   // Dev tools screen. Only available in debug mode.
   DevToolsScreen,
@@ -134,6 +135,12 @@ const App = observer(() => {
                         headerStyle: styles.headerWithoutDivider,
                         title: currentL10n.screenTitles.appInfo,
                       }}
+                    />
+
+                    <Drawer.Screen
+                      name={ROUTES.MEDICAL_OCR}
+                      component={gestureHandlerRootHOC(MedicalOCRNavigator)}
+                      options={{headerShown: false}}
                     />
 
                     {/* Only show Dev Tools screen in debug mode */}

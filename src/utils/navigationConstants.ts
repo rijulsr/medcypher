@@ -8,6 +8,9 @@ export const ROUTES = {
   SETTINGS: 'Settings',
   APP_INFO: 'App Info',
 
+  // Medical OCR camera screen
+  MEDICAL_OCR: 'Medical OCR',
+
   // Dev tools route. Only available in debug mode.
   DEV_TOOLS: 'Dev Tools',
 };
